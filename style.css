@@ -1,0 +1,71 @@
+:root {
+    --bg: #f8f9fd;
+    --primary: #3b82f6;
+    --success: #10b981;
+    --danger: #ef4444;
+    --text-main: #1e293b;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.app-shell { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+header h1 { font-size: 24px; margin: 0; }
+header h1 span { color: var(--primary); }
+
+#clear-all { background: white; border: 1px solid #ddd; padding: 8px 16px; border-radius: 20px; cursor: pointer; transition: 0.3s; }
+#clear-all:hover { background: #fee2e2; border-color: var(--danger); }
+
+.dashboard { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.card { background: white; border-radius: 16px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+/* Card de Saldo Azul Oceano */
+.main-card { 
+    grid-column: span 2; 
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6); 
+    color: white; 
+    text-align: center; 
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(30, 58, 138, 0.2);
+}
+
+.progress-container { background: rgba(255,255,255,0.2); height: 8px; border-radius: 4px; margin: 15px 0; overflow: hidden; }
+.progress-bar { background: var(--success); height: 100%; width: 0%; transition: width 0.6s ease; }
+
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; grid-column: span 2; }
+.income-card h3 { color: var(--success); margin: 5px 0 0; }
+.expense-card h3 { color: var(--danger); margin: 5px 0 0; }
+
+.chart-card { height: 320px; display: flex; align-items: center; justify-content: center; }
+
+.form-card h3 { margin-top: 0; }
+.form-card input, .form-card select { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #e2e8f0; border-radius: 8px; box-sizing: border-box; }
+
+.input-group { display: flex; gap: 10px; }
+
+.type-selector { display: flex; gap: 10px; margin: 10px 0; }
+.radio-label { flex: 1; }
+.radio-label input { display: none; }
+.btn-type { display: block; text-align: center; padding: 10px; border-radius: 8px; border: 1px solid #e2e8f0; cursor: pointer; transition: 0.2s; }
+
+input:checked + .btn-income { background: var(--success); color: white; border-color: var(--success); }
+input:checked + .btn-expense { background: var(--danger); color: white; border-color: var(--danger); }
+
+.submit-btn { width: 100%; padding: 15px; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; transition: 0.2s; }
+.submit-btn:hover { background: #2563eb; transform: translateY(-1px); }
+
+.history-section { grid-column: span 2; }
+.list { list-style: none; padding: 0; }
+.list li { display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid #f1f5f9; position: relative; }
+.list li:last-child { border-bottom: none; }
+
+.delete-btn { border: none; background: #fee2e2; color: var(--danger); padding: 5px 10px; border-radius: 6px; cursor: pointer; margin-right: 15px; font-weight: bold; }
+.delete-btn:hover { background: var(--danger); color: white; }
+
+@media (max-width: 768px) { .dashboard { grid-template-columns: 1fr; } .main-card, .summary-grid, .history-section { grid-column: span 1; } }

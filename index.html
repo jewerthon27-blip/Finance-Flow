@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceFlow Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <header>
+            <h1>Finance <span>Flow</span></h1>
+            <button id="clear-all" onclick="clearAll()">Limpar Tudo</button>
+        </header>
+
+        <main class="dashboard">
+            <section class="balance-section">
+                <div class="card main-card">
+                    <p>Saldo Disponível</p>
+                    <h2 id="balance">R$ 0,00</h2>
+                    <div class="progress-container">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                    <small id="usage-text">0% da receita utilizada</small>
+                </div>
+
+                <div class="summary-grid">
+                    <div class="card income-card">
+                        <span>Receitas</span>
+                        <h3 id="money-plus">+ R$ 0,00</h3>
+                    </div>
+                    <div class="card expense-card">
+                        <span>Despesas</span>
+                        <h3 id="money-minus">- R$ 0,00</h3>
+                    </div>
+                </div>
+            </section>
+
+            <section class="action-section">
+                <div class="card chart-card">
+                    <canvas id="myChart"></canvas>
+                </div>
+
+                <div class="card form-card">
+                    <h3>Nova Transação</h3>
+                    <form id="form">
+                        <input type="text" id="text" placeholder="Descrição (ex: Aluguel)" required>
+                        
+                        <div class="input-group">
+                            <select id="category">
+                                <option value="Moradia">Moradia</option>
+                                <option value="Alimentação">Alimentação</option>
+                                <option value="Lazer">Lazer</option>
+                                <option value="Transporte">Transporte</option>
+                                <option value="Salário">Salário</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                            <select id="method">
+                                <option value="Pix">Pix</option>
+                                <option value="Cartão">Cartão</option>
+                                <option value="Dinheiro">Dinheiro</option>
+                            </select>
+                        </div>
+
+                        <div class="type-selector">
+                            <label class="radio-label">
+                                <input type="radio" name="transaction-type" value="income" checked>
+                                <span class="btn-type btn-income">Entrada</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="transaction-type" value="expense">
+                                <span class="btn-type btn-expense">Saída</span>
+                            </label>
+                        </div>
+
+                        <input type="number" id="amount" placeholder="Valor R$" step="0.01" required>
+                        <button class="submit-btn">Registrar Transação</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="history-section">
+                <div class="card list-card">
+                    <h3>Histórico de Atividades</h3>
+                    <ul id="transactions" class="list"></ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
