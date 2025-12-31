@@ -18,7 +18,7 @@ O projeto foi desenvolvido para facilitar a visualização da saúde financeira,
 * **Chart.js**: Biblioteca utilizada para a renderização dos gráficos.
 
 ## 📸 Demonstração
-![Finance Flow Preview](finance-print.png)
+![Finance Flow Preview](https://github.com/jewerthon27-blip/Finance-Flow/blob/994f95b2122d18b33bd2e5145620a0500de934c8/finance-print.png.png)
 
 ---
 🚀 *Desenvolvido por Jonas Ewerthon*
